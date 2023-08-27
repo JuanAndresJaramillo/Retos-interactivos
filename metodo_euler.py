@@ -7,7 +7,7 @@ def metodo_euler( EDO, X0, N, Y0, h ):
     print( f"Iteracion \t X \t Y")
     y = Y0  
     x = X0
-    print( "--"*6 )
+    print( "--"*15 )
     print( f"{0} \t \t {X0} \t {y}")
     for i in range( 1, N ):
         resultado = eval(EDO)
@@ -17,7 +17,7 @@ def metodo_euler( EDO, X0, N, Y0, h ):
         print( "--"*15 )
         print( f"{i} \t \t {x} \t {y}")
 
-resul = metodo_euler("2*x+y", 0, 1, 2, 0.2)
+resul = metodo_euler("2*x+y", 0, 5, 2, 0.2)
 
         
     
