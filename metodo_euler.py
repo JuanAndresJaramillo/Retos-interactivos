@@ -9,7 +9,7 @@ def metodo_euler( EDO, X0, N, Y0, h ):
     x = X0
     print( "--"*15 )
     print( f"{0} \t \t {X0} \t {y}")
-    for i in range( 1, N ):
+    for i in range( 1, N+1 ):
         resultado = eval(EDO)
         y += h * resultado
         x += h
