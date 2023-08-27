@@ -13,7 +13,6 @@ def metodo_euler( EDO, X0, N, Y0, h ):
         resultado = eval(EDO)
         y += h * resultado
         x += h
-        i += 1
         print( "--"*15 )
         print( f"{i} \t \t {x} \t {y}")
 
