@@ -14,8 +14,8 @@ def metodo_euler( EDO, X0, N, Y0, h ):
         y += h * resultado
         x += h
         i += 1
-        print( "--"*6 )
-        print( f"{i} \t {x} \t {y}")
+        print( "--"*15 )
+        print( f"{i} \t \t {x} \t {y}")
 
 resul = metodo_euler("2*x+y", 0, 1, 2, 0.2)
 
