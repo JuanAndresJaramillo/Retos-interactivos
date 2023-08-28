@@ -38,6 +38,21 @@ def ingresar_numero_real_positivo(mensaje):
             print( "Digite un numero real positivo\n")
     return numero
     
-    
-        
+def ingresar_ecuacion(mensaje, caracteres_permitidos):
+    bandera = 0
+    caracteres_malos = 0
+    while bandera == 0:
+        ecuacion = input(mensaje) 
+        for char in ecuacion:
+            if caracteres_permitidos.count(char) == 0:
+                print( f"El caracter {char} no puede ser incluido en la ecuacion" )
+                caracteres_malos +=1
+        if caracteres_malos == 0:
+            break
+        else:
+            print( f"Usted tiene {caracteres_malos} caracter(es) malos.", 
+                  "vuelva a ingresar la ecuacion de manera correcta")
+    return ecuacion
+
+
     
