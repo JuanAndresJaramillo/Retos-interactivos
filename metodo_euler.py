@@ -14,7 +14,7 @@ def metodo_euler( EDO, X0, N, Y0, h ):
         y += h * resultado
         x += h
         print( "--"*15 )
-        print( f"{i} \t \t {x} \t {y}")
+        print( f"{i} \t \t {round(x,4)} \t {round(y,4)}")
 
 resul = metodo_euler("2*x+y", 0, 5, 2, 0.2)
 
