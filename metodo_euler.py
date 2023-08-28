@@ -1,5 +1,5 @@
 
-def metodo_euler( EDO, X0, N, Y0, h ):
+def metodo_euler( EDO, X0, Y0, N, h ):
     """
     Esta funcion resuelve EDOs de primer grado
     por medio del metodo numerico de euler
@@ -16,7 +16,7 @@ def metodo_euler( EDO, X0, N, Y0, h ):
         print( "--"*15 )
         print( f"{i} \t \t {round(x,4)} \t {round(y,4)}")
 
-resul = metodo_euler("2*x+y", 0, 5, 2, 0.2)
+resul = metodo_euler("(x**2-1)/y**2", 0, 2, 5, 0.2)
 
         
     
