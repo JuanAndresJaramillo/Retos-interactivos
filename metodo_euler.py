@@ -40,9 +40,9 @@ def ingresar_numero_real_positivo(mensaje):
     
 def ingresar_ecuacion(mensaje, caracteres_permitidos):
     bandera = 0
-    caracteres_malos = 0
     while bandera == 0:
-        ecuacion = input(mensaje) 
+        ecuacion = input(mensaje)
+        caracteres_malos = 0 
         for char in ecuacion:
             if caracteres_permitidos.count(char) == 0:
                 print( f"El caracter {char} no puede ser incluido en la ecuacion" )
@@ -50,9 +50,16 @@ def ingresar_ecuacion(mensaje, caracteres_permitidos):
         if caracteres_malos == 0:
             break
         else:
-            print( f"Usted tiene {caracteres_malos} caracter(es) malos.", 
+            print( f"Usted tiene {caracteres_malos} caracter(es) malo(s).", 
                   "vuelva a ingresar la ecuacion de manera correcta")
     return ecuacion
 
 
-    
+x_inicial = float(input("Digite cuanto vale x en sus condiciones iniciales (X0): "))
+y_inicial = float(input("Digite cuanto vale Y en sus condiciones iniciales (Y0): "))
+numero_de_pasos = ingresar_numero_entero_positivo("Digite su numero de pasos: ")
+paso = ingresar_numero_real_positivo("Digite el paso de su ejercicio: ")
+ecuacion_diferencial = ingresar_ecuacion("Digite su ecuacion diferencial despejada en terminos de dy/dx \n solo se admiten las variables \"x\" y \"y\": ", "0123456789+-*/()xy")
+resultado = metodo_euler(ecuacion_diferencial, x_inicial, y_inicial, numero_de_pasos, paso)
+
+
