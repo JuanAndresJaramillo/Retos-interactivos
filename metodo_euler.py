@@ -21,9 +21,13 @@ def metodo_euler( EDO, X0, Y0, N, h ):
 def ingresar_numero_entero_positivo(mensaje):
     bandera = 0
     while (bandera == 0):
-        numero = int(input(mensaje))
-        if numero > 0:
-            bandera = 1
+        numero = input(mensaje)
+        if numero.isdigit() == True:
+            numero = int(numero)
+            if numero > 0:
+                bandera = 1
+            else:
+               print( "Digite un numero entero positivo\n") 
         else:
             print( "Digite un numero entero positivo\n")
     return numero
@@ -31,9 +35,13 @@ def ingresar_numero_entero_positivo(mensaje):
 def ingresar_numero_real_positivo(mensaje):
     bandera = 0
     while (bandera == 0):
-        numero = float(input(mensaje))
-        if numero > 0:
-            bandera = 1
+        numero = input(mensaje)
+        if numero.isalnum() == False and numero.isalpha() == False:
+            numero = float(numero)
+            if numero > 0:
+                bandera = 1
+            else:
+                print( "Digite un numero real positivo\n")
         else:
             print( "Digite un numero real positivo\n")
     return numero
@@ -55,11 +63,12 @@ def ingresar_ecuacion(mensaje, caracteres_permitidos):
     return ecuacion
 
 
-x_inicial = float(input("Digite cuanto vale x en sus condiciones iniciales (X0): "))
-y_inicial = float(input("Digite cuanto vale Y en sus condiciones iniciales (Y0): "))
-numero_de_pasos = ingresar_numero_entero_positivo("Digite su numero de pasos: ")
-paso = ingresar_numero_real_positivo("Digite el paso de su ejercicio: ")
-ecuacion_diferencial = ingresar_ecuacion("Digite su ecuacion diferencial despejada en terminos de dy/dx \n solo se admiten las variables \"x\" y \"y\": ", "0123456789+-*/()xy")
-resultado = metodo_euler(ecuacion_diferencial, x_inicial, y_inicial, numero_de_pasos, paso)
+if __name__ == '__main__':
+    x_inicial = float(input("Digite cuanto vale x en sus condiciones iniciales (X0): "))
+    y_inicial = float(input("Digite cuanto vale Y en sus condiciones iniciales (Y0): "))
+    numero_de_pasos = ingresar_numero_entero_positivo("Digite su numero de pasos: ")
+    paso = ingresar_numero_real_positivo("Digite el paso de su ejercicio: ")
+    ecuacion_diferencial = ingresar_ecuacion("Digite su ecuacion diferencial despejada en terminos de dy/dx \n solo se admiten las variables \"x\" y \"y\": ", "0123456789+-*/()xy")
+    resultado = metodo_euler(ecuacion_diferencial, x_inicial, y_inicial, numero_de_pasos, paso)
 
 
